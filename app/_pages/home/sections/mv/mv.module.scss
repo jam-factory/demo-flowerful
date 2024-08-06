@@ -1,0 +1,144 @@
+@import "@sass-utils";
+
+.mv {
+  padding: 8rem 6rem 6rem 6rem;
+  height: 100svh;
+  min-height: 68rem;
+  width: 100%;
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &::before {
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+
+    border: 0.1rem solid $c-white;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba($c-black, 0.3);
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-family: var(--font-cav);
+    font-size: 12rem;
+    color: $c-white;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  span {
+    z-index: 10;
+    color: $c-white;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    font-family: var(--font-zen);
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
+  }
+}
+
+.scroll {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  right: 8rem;
+  bottom: 10rem;
+  z-index: 1;
+
+  @include sp {
+    right: 2rem;
+    bottom: 3.2rem;
+  }
+
+  span {
+    display: block;
+    writing-mode: vertical-rl;
+    font-weight: bold;
+    font-family: var(--font-zen);
+    letter-spacing: 0.1em;
+
+    color: $c-white;
+    font-weight: 500;
+    font-size: 1.4rem;
+
+    @include sp-s {
+      font-size: 1.2rem;
+    }
+  }
+
+  span.bar {
+    position: relative;
+    width: 0.1rem;
+    height: 6rem;
+    display: block;
+    margin-top: 1.6rem;
+    overflow: hidden;
+    transform: translateX(-0.2rem);
+
+    @include sp-s {
+      height: 4.8rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $c-white;
+      animation: scroll-indicator 2s infinite;
+    }
+  }
+}
+
+@keyframes scroll-indicator {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  80% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}

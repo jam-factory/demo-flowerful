@@ -1,0 +1,21 @@
+@import "@sass-utils";
+
+.footer {
+  padding: 8rem 0;
+  // border-top: 0.1rem solid;
+  background-color: $c-white;
+}
+
+.logo {
+  font-family: var(--font-cav);
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.address {
+  font-family: var(--font-zen);
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  line-height: 1.75;
+}

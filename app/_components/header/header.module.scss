@@ -1,0 +1,37 @@
+@import "@sass-utils";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.2rem 6rem;
+  z-index: 10;
+  // background-color: $c-white;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  gap: 2rem;
+
+  a {
+    font-family: var(--font-serif);
+    font-weight: 500;
+  }
+}
+
+.logo {
+  font-family: var(--font-cav);
+  font-size: 3.6rem;
+  line-height: 1;
+
+  a {
+    display: flex;
+  }
+}

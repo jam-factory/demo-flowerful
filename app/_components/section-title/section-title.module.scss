@@ -1,0 +1,14 @@
+@import "@sass-utils";
+
+.en {
+  font-family: var(--font-ship);
+  font-size: 3.2rem;
+}
+
+.jp {
+  font-family: var(--font-zen);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-top: 0.8rem;
+}
