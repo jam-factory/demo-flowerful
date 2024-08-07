@@ -36,7 +36,7 @@ export default function InstagramPosts() {
           posted.media.data.map((post, index) => (
             <div key={index} className={styles.item}>
               <a className={styles.link} href={post.permalink} target="_blank" rel="noopener noreferrer">
-                <Image src={post.media_url} fill alt={post.caption ? post.caption : ""} />
+                <Image src={post.media_url} fill alt={post.caption ? post.caption : "Instagramの投稿画像"} />
 
                 <div className={styles.overlay}>
                   <div className={styles.likes}>
