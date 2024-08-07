@@ -5,7 +5,7 @@ import SectionTitle from "@/app/_components/section-title/section-title";
 
 export default function About() {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="message">
       <Container>
         <h2 className={styles.title}>
           <SectionTitle en="Message" jp="メッセージ" />

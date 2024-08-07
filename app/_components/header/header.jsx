@@ -7,14 +7,14 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <h1 className={styles.logo}>
-          <a href="/">
+          <Link href="/">
             <span>Flowerful</span>
-          </a>
+          </Link>
         </h1>
         <nav>
           <ul className={styles.list}>
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/#message">Message</Link>
             </li>
             <li>
               <Link href="/service">Service</Link>
