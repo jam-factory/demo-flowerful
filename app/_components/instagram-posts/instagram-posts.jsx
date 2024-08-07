@@ -32,7 +32,7 @@ export default function InstagramPosts() {
   return (
     <div>
       <div className={styles.list}>
-        {posted.media &&
+        {posted.length !== 0 &&
           posted.media.data.map((post, index) => (
             <div key={index} className={styles.item}>
               <a className={styles.link} href={post.permalink} target="_blank" rel="noopener noreferrer">
