@@ -1,4 +1,5 @@
 import Container from "../container/container";
+import Link from "next/link";
 import styles from "./header.module.scss";
 
 export default function Header() {
@@ -13,16 +14,21 @@ export default function Header() {
         <nav>
           <ul className={styles.list}>
             <li>
-              <a href="/about">About</a>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <a href="/service">Service</a>
+              <Link href="/service">Service</Link>
             </li>
             <li>
-              <a href="/company">Company</a>
+              <Link href="/company">Company</Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link href="/access">Access</Link>
+            </li>
+            <li>
+              <Link href="/contact" className={styles.btn}>
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>

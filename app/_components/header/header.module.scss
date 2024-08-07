@@ -18,12 +18,22 @@
 
 .list {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 3.2rem;
 
   a {
     font-family: var(--font-serif);
     font-weight: 500;
   }
+}
+
+.btn {
+  display: flex;
+  border: 0.1rem solid $c-black;
+  padding: 1rem 3.2rem;
+  font-size: 1.4rem;
+  background-color: $c-black;
+  color: $c-white;
 }
 
 .logo {

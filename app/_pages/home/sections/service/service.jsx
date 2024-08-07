@@ -62,7 +62,7 @@ export default function Service() {
 
         <div className={styles.btnWrap}>
           <Link href="/service" className={styles.btn}>
-            <span>View More</span>
+            <span>View Details</span>
             <IconArrowRightShort className={styles.btnArrow} />
           </Link>
         </div>

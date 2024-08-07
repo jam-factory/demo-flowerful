@@ -1,0 +1,57 @@
+@import "@sass-utils";
+
+.section {
+  background: $c-white;
+  padding: 16rem 0;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  margin-top: 4.8rem;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 6.4rem;
+}
+
+.btn {
+  position: relative;
+  width: 24rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+  border: 0.1rem solid $c-black;
+  background-color: $c-white;
+  z-index: 1;
+  transition: all 0.4s;
+
+  span {
+    position: relative;
+
+    font-family: var(--font-ship);
+    font-weight: 600;
+    font-size: 1.5rem;
+
+    letter-spacing: 0.04em;
+  }
+
+  svg {
+    font-size: 2.2rem;
+  }
+
+  @include hover {
+    &:hover {
+      color: $c-white;
+      background-color: $c-black;
+    }
+  }
+}
