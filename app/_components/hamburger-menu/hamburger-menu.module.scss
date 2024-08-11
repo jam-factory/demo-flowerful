@@ -106,6 +106,10 @@
   color: $c-black;
   transition: all 0.4s;
 
+  background-color: $c-black;
+  color: $c-white;
+  border-color: $c-white;
+
   @include sp {
     width: 20rem;
     height: 4.8rem;
