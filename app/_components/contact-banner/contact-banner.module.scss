@@ -2,6 +2,10 @@
 
 .banner {
   padding: 12rem 0;
+
+  @include sp {
+    padding: 8rem 0;
+  }
 }
 
 .img {
@@ -11,6 +15,15 @@
   display: flex;
   overflow: hidden;
   border: 0.1rem solid $c-black;
+
+  @include tab {
+    height: 40rem;
+  }
+
+  @include sp {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
 
   img {
     height: 100%;
@@ -41,6 +54,13 @@
     position: absolute;
     z-index: 1;
     transition: all 0.3s;
+
+    @include sp {
+      width: calc(100% - 1.6rem);
+      height: calc(100% - 1.6rem);
+      top: 0.8rem;
+      left: 0.8rem;
+    }
   }
 
   @include hover {
@@ -71,6 +91,10 @@
   opacity: 0;
   transform: translateY(-50%) translateX(-1.6rem);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  @include sp {
+    display: none;
+  }
 }
 
 .text {
@@ -94,6 +118,14 @@
       font-weight: bold;
       font-size: 3.2rem;
       // letter-spacing: 0.1em;
+
+      @include tab {
+        font-size: 2.6rem;
+      }
+
+      @include sp {
+        font-size: 2rem;
+      }
     }
 
     &:nth-child(2) {
@@ -101,6 +133,10 @@
       font-family: var(--font-zen);
       font-weight: 500;
       letter-spacing: 0.1em;
+
+      @include tab {
+        font-size: 1.2rem;
+      }
     }
   }
 }
@@ -111,10 +147,31 @@
   margin-bottom: 4rem;
   height: 50rem;
 
+  @include tab {
+    height: 40rem;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include sp {
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  @include sp-s {
+    flex-direction: column;
+  }
+
   .arrow {
     top: auto;
     right: 5rem;
     bottom: 4rem;
+
+    @include sp {
+      display: none;
+    }
   }
 
   .img {

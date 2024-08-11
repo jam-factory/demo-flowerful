@@ -1,21 +1,248 @@
 @import "@sass-utils";
 
 .footer {
-  padding: 8rem 0;
-  // border-top: 0.1rem solid;
+  padding: 10rem 0 2rem;
   background-color: $c-white;
+  margin-top: auto;
+
+  @include sp {
+    padding: 6.4rem 0 1.6rem;
+  }
 }
 
 .logo {
   font-family: var(--font-cav);
   font-size: 4rem;
   font-weight: bold;
+  line-height: 1;
+
+  @include sp {
+    font-size: 3.2rem;
+    text-align: center;
+  }
 }
 
-.address {
+.inner {
+  display: flex;
+  justify-content: space-between;
+
+  @include sp {
+    flex-direction: column;
+  }
+}
+
+.infoCol {
   font-family: var(--font-zen);
   font-weight: 500;
   font-size: 1.5rem;
   letter-spacing: 0.1em;
   line-height: 1.75;
+
+  @include sp {
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.address {
+  margin-top: 2rem;
+
+  @include sp {
+    margin-top: 1.6rem;
+  }
+}
+
+.hours {
+  margin-top: 1.6rem;
+
+  span {
+    display: block;
+  }
+}
+
+.holiday {
+  margin-top: 1.6rem;
+
+  span {
+    display: block;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include sp {
+    align-items: center;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 4rem;
+
+  @include sp {
+    margin-top: 1.2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.item {
+  @include sp {
+    width: 100%;
+  }
+}
+
+.link {
+  position: relative;
+  font-size: 1.5rem;
+  font-family: var(--font-ship);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.8rem 0;
+
+  @include sp {
+    font-size: 1.3rem;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 0.1rem;
+    background-color: $c-black;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+    transition: all 0.3s;
+  }
+
+  @include hover {
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.btns {
+  display: flex;
+  gap: 3.2rem;
+  justify-content: flex-end;
+  margin-top: 3.2rem;
+
+  @include sp {
+    margin-top: 2.4rem;
+    gap: 1.6rem;
+  }
+
+  @include sp-s {
+    flex-direction: column-reverse;
+  }
+}
+
+.btn {
+}
+
+.btnLink {
+  position: relative;
+  width: 18rem;
+  height: 5.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.6rem;
+  border: 0.1rem solid $c-black;
+  background-color: $c-white;
+  z-index: 1;
+  transition: all 0.4s;
+
+  @include sp {
+    width: 16rem;
+    height: 4.8rem;
+  }
+
+  span {
+    position: relative;
+    font-family: var(--font-ship);
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+
+    @include sp {
+      font-size: 1.2rem;
+    }
+  }
+
+  svg {
+    font-size: 2.2rem;
+
+    @include sp {
+      font-size: 1.8rem;
+    }
+  }
+
+  @include hover {
+    &:hover {
+      color: $c-white;
+      background-color: $c-black;
+    }
+  }
+
+  &.isBlack {
+    background-color: $c-black;
+    color: $c-white;
+
+    @include hover {
+      &:hover {
+        color: $c-black;
+        background-color: $c-white;
+      }
+    }
+  }
+}
+
+.copy {
+  position: relative;
+  text-align: center;
+  font-family: var(--font-ship);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 8rem;
+  padding-top: 2rem;
+
+  @include sp {
+    font-size: 1.1rem;
+    padding-top: 1.6rem;
+    margin-top: 6.4rem;
+  }
+
+  &::after {
+    content: "";
+    width: calc(100% - 12rem);
+    height: 0.1rem;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    @include tab {
+      width: calc(100% - 8rem);
+    }
+
+    @include sp {
+      width: calc(100% - 4rem);
+    }
+  }
 }

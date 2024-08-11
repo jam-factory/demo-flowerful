@@ -25,6 +25,9 @@ body {
   background-color: $c-white;
   background-color: #f5f5f7;
   color: #1d1d1f;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
 
   @include sp {
     font-size: 1.5rem;
@@ -153,10 +156,14 @@ button {
 }
 
 .jf-container {
-  max-width: 120rem;
+  max-width: 126rem;
   width: 100%;
-  padding: 0 3rem;
+  padding: 0 6rem;
   margin: 0 auto;
+
+  @include tab {
+    padding: 0 4rem;
+  }
 
   @include sp {
     padding: 0 2rem;

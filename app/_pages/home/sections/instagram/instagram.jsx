@@ -11,6 +11,13 @@ export default function Instagram() {
         <h2 className={styles.title}>
           <SectionTitle en="Instagram" jp="インスタグラム" />
         </h2>
+        <p className={styles.intro}>
+          最新のフラワーアレンジメントや店内の様子をInstagramでシェアしています。
+          <br />
+          季節の花やイベント情報、特別なプロモーションなど、
+          <br />
+          お得な最新情報をお届けしますので、ぜひフォローしてください。
+        </p>
         <div className={styles.list}>
           <InstagramPosts />
         </div>

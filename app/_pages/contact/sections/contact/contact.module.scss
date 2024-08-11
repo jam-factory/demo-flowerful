@@ -1,0 +1,19 @@
+@import "@sass-utils";
+
+.section {
+  padding: 10rem 0 16rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.intro {
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2;
+  margin-top: 4rem;
+}

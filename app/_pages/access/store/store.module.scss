@@ -1,0 +1,84 @@
+@import "@sass-utils";
+
+.sec {
+  background-color: $c-white;
+  padding: 16rem 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+  margin-top: 6.4rem;
+  gap: 4rem;
+
+  @include tab {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+}
+
+.info {
+  width: calc(50% - 2rem);
+
+  @include tab {
+    width: 100%;
+  }
+
+  dl {
+    border-top: 0.1rem solid #e3e2e2;
+
+    @include tab {
+      border-top: none;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0;
+      border-bottom: 0.1rem solid #e3e2e2;
+      line-height: 2;
+
+      dt {
+        font-weight: 600;
+      }
+
+      dd {
+        font-weight: 500;
+
+        a {
+          text-decoration: underline;
+          transition: opacity 0.3s;
+
+          @include hover {
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.thumb {
+  position: relative;
+  width: calc(50% - 2rem);
+
+  @include tab {
+    height: 32rem;
+    width: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}

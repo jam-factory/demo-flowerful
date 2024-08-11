@@ -7,7 +7,22 @@
   width: 100%;
   padding: 1.8rem 6rem;
   z-index: 10;
-  // background-color: $c-white;
+  background-color: #fff;
+  box-shadow: 0 1rem 1.6rem rgba($c-black, 0.04);
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  @include tab {
+    padding: 1.6rem 4rem;
+  }
+
+  @include sp {
+    padding: 1.4rem 2rem;
+  }
+
+  &.isTransparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 .inner {
@@ -21,9 +36,43 @@
   align-items: center;
   gap: 3.2rem;
 
-  a {
-    font-family: var(--font-serif);
-    font-weight: 500;
+  @include tab {
+    gap: 2.4rem;
+  }
+
+  @include sp {
+    display: none;
+  }
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-ship);
+  font-weight: 600;
+  padding: 0.8rem 0;
+  letter-spacing: 0.02em;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 0.1rem;
+    background-color: $c-black;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+    transition: all 0.3s;
+  }
+
+  @include hover {
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
 }
 
@@ -33,7 +82,9 @@
   padding: 1rem 3.2rem;
   font-size: 1.4rem;
   background-color: $c-black;
+  font-family: var(--font-ship);
   color: $c-white;
+  font-weight: 600;
   transition: all 0.4s;
 
   @include hover {
@@ -49,7 +100,51 @@
   font-size: 3.6rem;
   line-height: 1;
 
+  @include sp {
+    font-size: 2.8rem;
+  }
+
   a {
     display: flex;
+  }
+}
+
+.hamburgerBtn {
+  display: none;
+  position: fixed;
+  top: 1.4rem;
+  right: 2rem;
+  width: 2.8rem;
+  height: 2.8rem;
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  span,
+  &::before,
+  &::after {
+    width: 2.4rem;
+    height: 0.1rem;
+    background-color: $c-black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &::before {
+    transform: translateY(-0.6rem);
+  }
+
+  &::after {
+    transform: translateY(0.6rem);
+  }
+
+  @include sp {
+    display: block;
   }
 }

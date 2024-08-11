@@ -29,6 +29,10 @@
 .pagination {
   bottom: 2.4rem;
 
+  @include sp {
+    bottom: 1.6rem;
+  }
+
   :global {
     .splide__pagination__page {
       opacity: 0.7;
@@ -37,6 +41,12 @@
       width: 0.8rem;
       margin: 0 0.4rem;
       pointer-events: none;
+
+      @include sp {
+        width: 0.6rem;
+        height: 0.6rem;
+        margin: 0 0.3rem;
+      }
     }
 
     .splide__pagination__page.is-active {

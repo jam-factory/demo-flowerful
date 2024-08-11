@@ -2,11 +2,10 @@ import "modern-css-reset/dist/reset.min.css";
 import "@/app/_styles/globals.scss";
 import "@splidejs/react-splide/css";
 
-import { Inter, Klee_One, Shippori_Mincho, Zen_Kaku_Gothic_New, Noto_Serif_JP, Caveat } from "next/font/google";
+import { Klee_One, Shippori_Mincho, Zen_Kaku_Gothic_New, Noto_Serif_JP, Caveat } from "next/font/google";
 import Header from "./_components/header/header";
 import Footer from "./_components/footer/footer";
-
-// const inter = Inter({ subsets: ["latin"] });
+import { HeaderContextProvider } from "./_context/header-context";
 
 const kleeOne = Klee_One({ subsets: ["latin"], weight: ["400", "600"], display: "swap", variable: "--font-klee" });
 
@@ -49,9 +48,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${kleeOne.variable} ${shippori.variable} ${zenkaku.variable} ${noto.variable} ${caveat.variable}`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <HeaderContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </HeaderContextProvider>
       </body>
     </html>
   );

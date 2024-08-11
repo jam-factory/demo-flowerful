@@ -3,6 +3,10 @@
 .service {
   padding: 16rem 0 0;
   background-color: $c-white;
+
+  @include sp {
+    padding-top: 8rem;
+  }
 }
 
 .title {
@@ -13,6 +17,10 @@
 
 .list {
   margin-top: 6.4rem;
+
+  @include sp {
+    margin-top: 3.2rem;
+  }
 }
 
 .item {
@@ -23,12 +31,30 @@
   height: 100%;
   align-items: center;
 
+  @include tab {
+    flex-direction: column-reverse;
+    min-height: auto;
+  }
+
   &:not(:first-child) {
     margin-top: 10rem;
+
+    @include sp {
+      margin-top: 6.4rem;
+    }
   }
 
   &:nth-child(2n) {
     flex-direction: row-reverse;
+
+    @include tab {
+      flex-direction: column-reverse;
+
+      .textContent {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
 
     .imgContent {
       right: auto;
@@ -47,6 +73,17 @@
   flex-direction: column;
   padding: 6rem;
 
+  @include tab {
+    width: 90%;
+    margin-right: auto;
+    margin-top: -6.4rem;
+    padding: 4rem;
+  }
+
+  @include sp-s {
+    padding: 3.2rem;
+  }
+
   &::before {
     content: "";
     width: calc(100% - 2rem);
@@ -56,18 +93,14 @@
     bottom: 1rem;
     left: 1rem;
     pointer-events: none;
-  }
 
-  // &::after {
-  //   content: "";
-  //   width: 8rem;
-  //   height: 8rem;
-  //   border-top: 0.1rem solid $c-black;
-  //   border-right: 0.1rem solid $c-black;
-  //   position: absolute;
-  //   top: 1.5rem;
-  //   right: 1.5rem;
-  // }
+    @include sp {
+      width: calc(100% - 1.6rem);
+      height: calc(100% - 1.6rem);
+      top: 0.8rem;
+      left: 0.8rem;
+    }
+  }
 
   h3 {
     display: flex;
@@ -77,6 +110,10 @@
       &:nth-child(1) {
         font-family: var(--font-cav);
         font-size: 2rem;
+
+        @include sp {
+          font-size: 1.6rem;
+        }
       }
 
       &:nth-child(2) {
@@ -84,6 +121,14 @@
         font-size: 2.4rem;
         font-weight: 500;
         letter-spacing: 0.1em;
+
+        @include sp {
+          font-size: 2rem;
+        }
+
+        @include sp-s {
+          font-size: 1.8rem;
+        }
       }
     }
   }
@@ -93,6 +138,10 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2;
+
+    @include sp {
+      font-size: 1.3rem;
+    }
   }
 }
 
@@ -102,6 +151,17 @@
   top: 0;
   height: 100%;
   width: 70%;
+
+  @include tab {
+    position: relative;
+    width: 100%;
+    height: 48rem;
+  }
+
+  @include sp-s {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
 
   img {
     position: absolute;
@@ -116,6 +176,10 @@
   display: flex;
   justify-content: center;
   margin-top: 6.4rem;
+
+  @include sp {
+    margin-top: 3.2rem;
+  }
 }
 
 .btn {
@@ -123,18 +187,10 @@
   width: 24rem;
   height: 6rem;
 
-  // &::before {
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   border: 0.1rem solid $c-black;
-  //   position: absolute;
-  //   right: 0;
-  //   bottom: 0;
-  //   transform: translate(0.8rem, 0.8rem);
-
-  //   transition: all 0.3s;
-  // }
+  @include sp {
+    width: 20rem;
+    height: 4.8rem;
+  }
 
   span {
     position: relative;
@@ -153,6 +209,12 @@
     z-index: 1;
     letter-spacing: 0.04em;
     transition: all 0.4s;
+
+    @include sp {
+      padding: 0 1.6rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
+    }
   }
 
   @include hover {
@@ -183,6 +245,10 @@
   transform: translateY(-50%);
   z-index: 2;
   width: 3rem;
+
+  @include sp {
+    width: 2.6rem;
+  }
 
   polyline {
     stroke: $c-black;
