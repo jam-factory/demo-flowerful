@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useContext } from "react";
 import { HamburgerMenuContext } from "@/app/_context/hamburger-menu-context";
 import { FaInstagram } from "react-icons/fa";
@@ -54,9 +53,8 @@ export default function HamburgerMenu() {
 
         <ul className={styles.btns}>
           <li className={styles.btn}>
-            <Link href="/contact" className={`${styles.btnLink}`}>
+            <Link href="/contact" className={`${styles.btnLink}`} onClick={closeHamburgerMenu}>
               <span>Contact</span>
-              {/* <FiMail /> */}
               <MdOutlineMail />
             </Link>
           </li>
@@ -66,6 +64,7 @@ export default function HamburgerMenu() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnLink}
+              onClick={closeHamburgerMenu}
             >
               <span>Instagram</span>
               <FaInstagram />

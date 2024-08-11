@@ -150,6 +150,8 @@
   }
 
   &.isOpen {
+    right: 1.6rem;
+
     span,
     &::before,
     &::after {
