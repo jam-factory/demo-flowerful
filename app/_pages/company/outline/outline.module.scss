@@ -2,6 +2,10 @@
 
 .sec {
   padding: 10rem 0 16rem;
+
+  @include sp {
+    padding: 8rem 0;
+  }
 }
 
 .title {
@@ -13,17 +17,35 @@
 .list {
   margin-top: 6.4rem;
   border-top: 0.1rem solid #e3e2e2;
+
+  @include sp {
+    margin-top: 3.2rem;
+  }
 }
 
 .item {
   display: flex;
   padding: 2.4rem 0;
   border-bottom: 0.1rem solid #e3e2e2;
+  font-size: 1.5rem;
+
+  @include sp {
+    padding: 1.6rem 0;
+    font-size: 1.3rem;
+  }
 
   dt {
     width: 32rem;
     flex-shrink: 0;
     font-weight: bold;
+
+    @include sp {
+      width: 16rem;
+    }
+
+    @include sp-s {
+      width: 12rem;
+    }
   }
 
   dd {

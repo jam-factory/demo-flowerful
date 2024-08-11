@@ -6,6 +6,8 @@ import { Klee_One, Shippori_Mincho, Zen_Kaku_Gothic_New, Noto_Serif_JP, Caveat }
 import Header from "./_components/header/header";
 import Footer from "./_components/footer/footer";
 import { HeaderContextProvider } from "./_context/header-context";
+import { HamburgerMenuContextProvider } from "./_context/hamburger-menu-context";
+import HamburgerMenu from "./_components/hamburger-menu/hamburger-menu";
 
 const kleeOne = Klee_One({ subsets: ["latin"], weight: ["400", "600"], display: "swap", variable: "--font-klee" });
 
@@ -48,11 +50,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${kleeOne.variable} ${shippori.variable} ${zenkaku.variable} ${noto.variable} ${caveat.variable}`}
       >
-        <HeaderContextProvider>
-          <Header />
-          {children}
-          <Footer />
-        </HeaderContextProvider>
+        <HamburgerMenuContextProvider>
+          <HeaderContextProvider>
+            <Header />
+            <HamburgerMenu />
+            {children}
+            <Footer />
+          </HeaderContextProvider>
+        </HamburgerMenuContextProvider>
       </body>
     </html>
   );

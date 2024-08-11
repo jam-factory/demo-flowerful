@@ -116,6 +116,7 @@
   right: 2rem;
   width: 2.8rem;
   height: 2.8rem;
+  z-index: $z-hamburger-btn;
 
   &::before,
   &::after {
@@ -146,5 +147,25 @@
 
   @include sp {
     display: block;
+  }
+
+  &.isOpen {
+    span,
+    &::before,
+    &::after {
+      background-color: $c-white;
+    }
+
+    span {
+      opacity: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 }

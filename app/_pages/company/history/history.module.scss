@@ -3,6 +3,10 @@
 .sec {
   padding: 16rem 0 16rem;
   background-color: $c-white;
+
+  @include sp {
+    padding: 8rem 0;
+  }
 }
 
 .title {
@@ -16,6 +20,10 @@
   margin-top: 4rem;
   padding: 2rem 0 4rem 0;
 
+  @include sp-s {
+    padding: 0 0 2.4rem 0;
+  }
+
   &::before,
   &::after {
     content: "";
@@ -28,6 +36,11 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+
+    @include sp-s {
+      right: auto;
+      left: -0.3rem;
+    }
   }
 
   &::after {
@@ -45,6 +58,10 @@
   right: 0;
   top: 0;
   margin: 0 auto;
+
+  @include sp-s {
+    right: auto;
+  }
 }
 
 .list {
@@ -64,22 +81,43 @@
     }
   }
 
-  &:first-child {
-  }
-
   &:not(:first-child) {
     margin-top: -16rem;
+
+    @include sp-s {
+      margin-top: 4rem;
+    }
   }
 }
 
 .block {
   width: calc(50% - 4rem);
 
+  @include sp {
+    width: calc(50% - 2rem);
+  }
+
+  @include sp-s {
+    width: calc(100% - 2rem);
+    margin-left: auto;
+  }
+
+  &:first-child {
+    @include sp-s {
+      margin-top: -0.5rem;
+    }
+  }
+
   h3 {
     font-family: var(--font-ship);
     font-weight: bold;
     // font-weight: 600;
     margin-top: 2.4rem;
+
+    @include sp {
+      font-size: 1.5rem;
+      margin-top: 1.6rem;
+    }
   }
 
   .text {
@@ -87,6 +125,10 @@
     font-size: 1.5rem;
     line-height: 2;
     margin-top: 0.8rem;
+
+    @include sp {
+      font-size: 1.3rem;
+    }
   }
 }
 
@@ -116,4 +158,13 @@
   font-weight: bold;
   text-align: right;
   margin-bottom: 1.2rem;
+
+  @include sp {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  @include sp-s {
+    text-align: left;
+  }
 }

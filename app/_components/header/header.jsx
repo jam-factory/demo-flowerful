@@ -2,11 +2,26 @@
 
 import { HeaderContext } from "@/app/_context/header-context";
 import { useContext } from "react";
+import { HamburgerMenuContext } from "@/app/_context/hamburger-menu-context";
 import Link from "next/link";
 import styles from "./header.module.scss";
 
 export default function Header() {
   const { isTransparent } = useContext(HeaderContext);
+
+  const { hamburgerMenuIsOpen, setHamburgerMenuIsOpen } = useContext(HamburgerMenuContext);
+
+  const toggleHamburgerMenu = () => {
+    setHamburgerMenuIsOpen((prev) => !prev);
+
+    if (!hamburgerMenuIsOpen) {
+      document.body.style.overflow = "hidden";
+    }
+
+    if (hamburgerMenuIsOpen) {
+      document.body.style.overflow = "auto";
+    }
+  };
 
   return (
     <>
@@ -48,7 +63,12 @@ export default function Header() {
           </nav>
         </div>
       </header>
-      <button className={styles.hamburgerBtn} aria-label="ハンバーガーメニューを開閉する">
+      <button
+        className={`${styles.hamburgerBtn} ${hamburgerMenuIsOpen && styles.isOpen}`}
+        aria-label="ハンバーガーメニューを開閉する"
+        type="button"
+        onClick={toggleHamburgerMenu}
+      >
         <span></span>
       </button>
     </>

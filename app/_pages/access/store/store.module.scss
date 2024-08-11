@@ -3,6 +3,10 @@
 .sec {
   background-color: $c-white;
   padding: 16rem 0;
+
+  @include sp {
+    padding: 8rem 0;
+  }
 }
 
 .title {
@@ -20,6 +24,10 @@
   @include tab {
     flex-direction: column-reverse;
     gap: 0;
+  }
+
+  @include sp {
+    margin-top: 3.2rem;
   }
 }
 
@@ -43,6 +51,12 @@
       padding: 2rem 0;
       border-bottom: 0.1rem solid #e3e2e2;
       line-height: 2;
+      font-size: 1.5rem;
+
+      @include sp {
+        padding: 1.6rem 0;
+        font-size: 1.3rem;
+      }
 
       dt {
         font-weight: 600;
