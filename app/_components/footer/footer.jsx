@@ -5,6 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 import IconArrowRightShort from "@/app/_icons/icon-arrow-right-short";
 import { FiMail } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function Footer() {
   return (
@@ -16,10 +17,10 @@ export default function Footer() {
               Flowerful
             </Link>
 
-            <div className={styles.address}>
+            <div className={`${styles.address} ${zenkaku.className}`}>
               <p>〒150-0000 東京都渋谷区1-2-3</p>
             </div>
-            <div className={styles.tel}>
+            <div className={`${styles.tel} ${zenkaku.className}`}>
               TEL: <span>03-1234-5678</span>
             </div>
             {/* <div className={styles.hours}>

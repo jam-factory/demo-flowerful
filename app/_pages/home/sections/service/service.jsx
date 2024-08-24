@@ -4,6 +4,7 @@ import SectionTitle from "@/app/_components/section-title/section-title";
 import Image from "next/image";
 import Link from "next/link";
 import IconArrowRightShort from "@/app/_icons/icon-arrow-right-short";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function Service() {
   return (
@@ -18,9 +19,9 @@ export default function Service() {
             <div className={styles.textContent}>
               <h3>
                 <span>In-Store Sales</span>
-                <span>店頭販売</span>
+                <span className={zenkaku.className}>店頭販売</span>
               </h3>
-              <p>
+              <p className={zenkaku.className}>
                 新鮮で美しい花々を取り揃えています。季節の花や特別なイベント用の花束など、さまざまなシーンに合うお花をご用意しております。店頭では専門スタッフが丁寧にご案内し、お客様のご希望に合わせた最適な花をご提案いたします。
               </p>
             </div>
@@ -33,9 +34,9 @@ export default function Service() {
             <div className={styles.textContent}>
               <h3>
                 <span>Flower Arrangements</span>
-                <span>フラワーアレンジメント</span>
+                <span className={zenkaku.className}>フラワーアレンジメント</span>
               </h3>
-              <p>
+              <p className={zenkaku.className}>
                 お客様のご要望に合わせたオーダーメイドの花束やアレンジメントを作成します。特別なギフトや記念日のために心を込めてデザインします。季節の花材を使ったアレンジメントやテーマに合わせたデザインなど、多様なスタイルに対応可能です。
               </p>
             </div>
@@ -48,9 +49,9 @@ export default function Service() {
             <div className={styles.textContent}>
               <h3>
                 <span>Event Decorations</span>
-                <span>イベント装飾</span>
+                <span className={zenkaku.className}>イベント装飾</span>
               </h3>
-              <p>
+              <p className={zenkaku.className}>
                 結婚式、パーティー、企業イベントなどの装飾を承ります。イベントのテーマに合わせた華やかなデザインで、特別な日を彩ります。豊富な経験を持つフローリストが、お客様のイメージにぴったりの空間を演出いたします。
               </p>
             </div>

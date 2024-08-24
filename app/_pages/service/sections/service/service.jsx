@@ -1,5 +1,6 @@
 import styles from "./service.module.scss";
 import Container from "@/app/_components/container/container";
+import { zenkaku } from "@/app/_utils/fonts";
 import Image from "next/image";
 
 export default function Service() {
@@ -19,8 +20,8 @@ export default function Service() {
                 </div>
                 <div className={styles.textCol}>
                   <div className={styles.flow}>
-                    <h3>サービス概要</h3>
-                    <div className={styles.text}>
+                    <h3 className={zenkaku.className}>サービス概要</h3>
+                    <div className={`${styles.text} ${zenkaku.className}`}>
                       <p>
                         新鮮で美しい花々を取り揃えています。季節の花や特別なイベント用の花束など、さまざまなシーンに合うお花をご用意しております。店頭では専門スタッフが丁寧にご案内し、お客様のご希望に合わせた最適な花をご提案いたします。
                       </p>
@@ -31,8 +32,8 @@ export default function Service() {
                   </div>
 
                   <div className={styles.flow}>
-                    <h3>サービスの流れ</h3>
-                    <ol>
+                    <h3 className={zenkaku.className}>サービスの流れ</h3>
+                    <ol className={zenkaku.className}>
                       <li>
                         <h4>
                           <span>01. </span>ご来店
@@ -75,8 +76,8 @@ export default function Service() {
                 </div>
                 <div className={styles.textCol}>
                   <div className={styles.flow}>
-                    <h3>サービス概要</h3>
-                    <div className={styles.text}>
+                    <h3 className={zenkaku.className}>サービス概要</h3>
+                    <div className={`${styles.text} ${zenkaku.className}`}>
                       <p>
                         お客様のご要望に合わせたオーダーメイドの花束やアレンジメントを提供しています。特別なギフトや記念日のために、心を込めてデザインします。季節の花材を使ったアレンジメントや、テーマに合わせたデザインなど、多様なスタイルに対応可能です。
                       </p>
@@ -87,8 +88,8 @@ export default function Service() {
                   </div>
 
                   <div className={styles.flow}>
-                    <h3>サービスの流れ</h3>
-                    <ol>
+                    <h3 className={zenkaku.className}>サービスの流れ</h3>
+                    <ol className={zenkaku.className}>
                       <li>
                         <h4>
                           <span>01. </span>ご相談
@@ -138,8 +139,8 @@ export default function Service() {
                 </div>
                 <div className={styles.textCol}>
                   <div className={styles.flow}>
-                    <h3>サービス概要</h3>
-                    <div className={styles.text}>
+                    <h3 className={zenkaku.className}>サービス概要</h3>
+                    <div className={`${styles.text} ${zenkaku.className}`}>
                       <p>
                         結婚式、パーティー、企業イベントなど、さまざまなイベントの装飾を承ります。イベントのテーマや会場の雰囲気に合わせて、華やかで美しいデザインを提供し、特別な日を彩ります。経験豊富なフローリストが、お客様のイメージに合わせた空間を演出します。
                       </p>
@@ -150,8 +151,8 @@ export default function Service() {
                   </div>
 
                   <div className={styles.flow}>
-                    <h3>サービスの流れ</h3>
-                    <ol>
+                    <h3 className={zenkaku.className}>サービスの流れ</h3>
+                    <ol className={zenkaku.className}>
                       <li>
                         <h4>
                           <span>01. </span>初回相談

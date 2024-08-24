@@ -2,6 +2,7 @@ import Container from "@/app/_components/container/container";
 import styles from "./about.module.scss";
 import Image from "next/image";
 import SectionTitle from "@/app/_components/section-title/section-title";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function About() {
   return (
@@ -25,7 +26,7 @@ export default function About() {
             <div className={styles.box}>
               <div className={styles.boxInner}>
                 <p className={styles.head}>心と人生を満たす花束を。</p>
-                <div className={styles.intro}>
+                <div className={`${styles.intro} ${zenkaku.className}`}>
                   <p>
                     私たちFlowerfulは、花の力を信じています。一輪から豪華な花束まで、花には特別な魔法があります。日常に彩りを添え、大切な瞬間を演出し、心に癒しをもたらします。
                   </p>

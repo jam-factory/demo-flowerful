@@ -3,6 +3,7 @@ import styles from "./instagram.module.scss";
 import SectionTitle from "@/app/_components/section-title/section-title";
 import Container from "@/app/_components/container/container";
 import { FaInstagram } from "react-icons/fa";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function Instagram() {
   return (
@@ -11,7 +12,7 @@ export default function Instagram() {
         <h2 className={styles.title}>
           <SectionTitle en="Instagram" jp="インスタグラム" />
         </h2>
-        <p className={styles.intro}>
+        <p className={`${styles.intro} ${zenkaku.className}`}>
           最新のフラワーアレンジメントや店内の様子をInstagramでシェアしています。
           <br />
           季節の花やイベント情報、特別なプロモーションなど、

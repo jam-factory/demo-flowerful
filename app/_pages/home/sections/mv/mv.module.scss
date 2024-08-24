@@ -85,7 +85,6 @@
     color: $c-white;
     font-weight: bold;
     letter-spacing: 0.2em;
-    font-family: var(--font-zen);
     text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
 
     @include sp {
@@ -126,9 +125,7 @@
     display: block;
     writing-mode: vertical-rl;
     font-weight: bold;
-    font-family: var(--font-zen);
     letter-spacing: 0.1em;
-
     color: $c-white;
     font-weight: 500;
     font-size: 1.4rem;

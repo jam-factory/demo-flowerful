@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "../container/container";
 import styles from "./contact-banner.module.scss";
 import Link from "next/link";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function ContactBanner({ service, access, company }) {
   return (
@@ -14,7 +15,7 @@ export default function ContactBanner({ service, access, company }) {
 
               <div className={styles.text}>
                 <span>Service</span>
-                <span>私たちのサービス</span>
+                <span className={zenkaku.className}>私たちのサービス</span>
               </div>
 
               <div className={styles.arrow}>
@@ -29,7 +30,7 @@ export default function ContactBanner({ service, access, company }) {
 
               <div className={styles.text}>
                 <span>Company</span>
-                <span>会社概要</span>
+                <span className={zenkaku.className}>会社概要</span>
               </div>
 
               <div className={styles.arrow}>
@@ -44,7 +45,7 @@ export default function ContactBanner({ service, access, company }) {
 
               <div className={styles.text}>
                 <span>Access</span>
-                <span>アクセス</span>
+                <span className={zenkaku.className}>アクセス</span>
               </div>
 
               <div className={styles.arrow}>
@@ -59,7 +60,7 @@ export default function ContactBanner({ service, access, company }) {
 
           <div className={styles.text}>
             <span>Contact</span>
-            <span>お問い合わせ</span>
+            <span className={zenkaku.className}>お問い合わせ</span>
           </div>
 
           <div className={styles.arrow}>
