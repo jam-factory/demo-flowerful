@@ -22,8 +22,6 @@ const shippori = Shippori_Mincho({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   display: "swap",
-  // variable: "--font-ship",
-  // adjustFontFallback: false,
 });
 
 const caveat = Caveat({

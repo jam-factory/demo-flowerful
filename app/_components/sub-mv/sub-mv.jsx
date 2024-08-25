@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "../container/container";
 import styles from "./sub-mv.module.scss";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function SubMv({ imgUrl, titleEn, titleJp }) {
   return (
@@ -10,7 +11,7 @@ export default function SubMv({ imgUrl, titleEn, titleJp }) {
         <Container className={styles.container}>
           <h1 className={styles.title}>
             <span>{titleEn}</span>
-            <span>{titleJp}</span>
+            <span className={zenkaku.className}>{titleJp}</span>
           </h1>
         </Container>
       </div>

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import styles from "./form.module.scss";
 import { PiWarningCircleFill } from "react-icons/pi";
 import IconArrowRightShort from "@/app/_icons/icon-arrow-right-short";
+import { shippori, zenkaku } from "@/app/_utils/fonts";
 
 export default function Form() {
   const router = useRouter();
@@ -21,8 +22,8 @@ export default function Form() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.inner}>
-        <ul className={styles.info}>
+      <div className={`${styles.inner} ${zenkaku.className}`}>
+        <ul className={`${styles.info} `}>
           <li>*は必須項目ですので、必ずご記入ください。</li>
           <li>当サイトはデモサイトですので、実際にフォームの送信は行いません。</li>
         </ul>
@@ -169,7 +170,7 @@ export default function Form() {
 
         <div className={styles.btnWrap}>
           <button type="submit" className={styles.btn}>
-            <span>{isSubmitting ? "送信中..." : "送信する"}</span>
+            <span className={shippori.className}>{isSubmitting ? "送信中..." : "送信する"}</span>
             <IconArrowRightShort className={styles.btnArrow} />
           </button>
 

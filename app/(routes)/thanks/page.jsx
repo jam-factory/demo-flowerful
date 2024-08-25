@@ -4,6 +4,7 @@ import Link from "next/link";
 import Container from "@/app/_components/container/container";
 import IconArrowRightShort from "@/app/_icons/icon-arrow-right-short";
 import HeaderTransparentSection from "@/app/_components/header-transparent-section/header-transparent-section";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function ThanksPage() {
   return (
@@ -13,13 +14,13 @@ export default function ThanksPage() {
           <div className={styles.mvContent}>
             <h1 className={styles.title}>
               <span>Thank You</span>
-              <span>お問い合わせ送信完了</span>
+              <span className={zenkaku.className}>お問い合わせ送信完了</span>
             </h1>
           </div>
 
           <div className={styles.content}>
             <Container>
-              <div className={styles.text}>
+              <div className={`${styles.text} ${zenkaku.className}`}>
                 <p>
                   お問い合わせいただき、ありがとうございます。
                   <br />

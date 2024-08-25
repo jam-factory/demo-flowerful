@@ -5,6 +5,7 @@ import { IoMdTrain } from "react-icons/io";
 import { FaTrain } from "react-icons/fa";
 import { FaCar } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function Map() {
   return (
@@ -14,7 +15,7 @@ export default function Map() {
           <SectionTitle en="Access Map" jp="アクセスマップ" />
         </h2>
 
-        <p className={styles.intro}>
+        <p className={`${styles.intro} ${zenkaku.className}`}>
           電車でのアクセスが便利で、どなたでも気軽にお越しいただけます。
           <br />
           以下の地図をご参考に、ご来店ください。
@@ -31,7 +32,7 @@ export default function Map() {
         </div>
 
         <div className={styles.info}>
-          <div className={styles.infoBlock}>
+          <div className={`${styles.infoBlock} ${zenkaku.className}`}>
             <h3>
               <FaTrain />
               電車でお越しの方
@@ -41,7 +42,7 @@ export default function Map() {
             </p>
           </div>
 
-          <div className={styles.infoBlock}>
+          <div className={`${styles.infoBlock} ${zenkaku.className}`}>
             <h3>
               <FaCar />
               お車でお越しの方

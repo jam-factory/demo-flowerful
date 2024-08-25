@@ -1,6 +1,7 @@
 import SectionTitle from "@/app/_components/section-title/section-title";
 import styles from "./outline.module.scss";
 import Container from "@/app/_components/container/container";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function Outline() {
   return (
@@ -10,7 +11,7 @@ export default function Outline() {
           <SectionTitle en="Outline" jp="会社概要" />
         </h2>
 
-        <dl className={styles.list}>
+        <dl className={`${styles.list} ${zenkaku.className}`}>
           <div className={styles.item}>
             <dt>会社名</dt>
             <dd>株式会社Flowerful</dd>

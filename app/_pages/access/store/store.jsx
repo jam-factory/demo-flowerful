@@ -2,6 +2,7 @@ import SectionTitle from "@/app/_components/section-title/section-title";
 import styles from "./store.module.scss";
 import Container from "@/app/_components/container/container";
 import Image from "next/image";
+import { zenkaku } from "@/app/_utils/fonts";
 
 export default function Store() {
   return (
@@ -13,7 +14,7 @@ export default function Store() {
 
         <div className={styles.row}>
           <div className={styles.info}>
-            <dl>
+            <dl className={zenkaku.className}>
               <div>
                 <dt>店舗名</dt>
                 <dd>株式会社Flowerful 渋谷店</dd>
