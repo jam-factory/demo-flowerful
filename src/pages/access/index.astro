@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SubMv from "@/components/pages/sub/SubMv.astro";
+import Map from "@/components/pages/access/Map.astro";
+import Store from "@/components/pages/access/Store.astro";
+import NavBanner from "@/components/nav-banner/NavBanner.astro";
+import imgAccess from '@/images/access/mv.jpg';
+---
+
+<Layout title="アクセス">
+  <SubMv img={imgAccess} en="Access" jp="アクセス" />
+  <Map />
+  <Store />
+  <NavBanner service company />
+</Layout>
+

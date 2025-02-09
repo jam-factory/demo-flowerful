@@ -1,0 +1,53 @@
+---
+import Container from "@/components/container/Container.astro";
+import SectionTitle from "@/components/section-title/SectionTitle.astro";
+import Form from '@/components/form/form.jsx';
+---
+
+<section class="section">
+  <Container>
+    <h2 class="title">
+      <SectionTitle
+        en="Contact Form"
+        jp="お問い合わせフォーム"
+      />
+    </h2>
+    <p class="intro">
+      ご不明点やご質問がございましたら、下記フォームよりお気軽にお問い合わせください。
+      <br />
+      お客様からのお問い合わせには、2営業日以内に対応させていただきます。
+    </p>
+    <Form client:load />
+  </Container>
+</section>
+
+<style lang="scss">
+.section {
+  padding: 10rem 0 16rem;
+
+  @include mixin.sp {
+    padding: 8rem 0;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.intro {
+  font-family: var.$font-zen;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2;
+  margin-top: 4rem;
+
+  @include mixin.sp {
+    font-size: 1.3rem;
+    margin-top: 3.2rem;
+  }
+}
+
+</style>

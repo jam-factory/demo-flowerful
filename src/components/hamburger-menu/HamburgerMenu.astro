@@ -1,0 +1,303 @@
+---
+import { FaInstagram } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
+---
+
+<nav class="nav js-hamburger-menu">
+  <div class="inner">
+    <div class="logo">
+      <a href="/">
+        <span>Flowerful</span>
+      </a>
+    </div>
+
+    <ul class="list">
+      <li>
+        <a href="/">
+          <span>TOP</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#message">
+          <span>Message</span>
+        </a>
+      </li>
+      <li>
+        <a href="/service">
+          <span>Service</span>
+        </a>
+      </li>
+      <li>
+        <a href="/company">
+          <span>Company</span>
+        </a>
+      </li>
+      <li>
+        <a href="/access">
+          <span>Access</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="btns">
+      <li class="btn">
+        <a href="/contact" class="btn-link">
+          <span>Contact</span>
+          <MdOutlineMail />
+        </a>
+      </li>
+      <li class="btn">
+        <a
+          href="https://www.instagram.com/jam_factory.demo02/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-link"
+        >
+          <span>Instagram</span>
+          <FaInstagram />
+        </a>
+      </li>
+    </ul>
+
+    <div class="info">
+      <dl class="data">
+        <div class="data-block">
+          <dt>住所</dt>
+          <dd>
+            <p>
+              〒150-0000
+              <br />
+              東京都渋谷区1-2-3
+            </p>
+          </dd>
+        </div>
+        <div class="data-block">
+          <dt>電話番号</dt>
+          <dd>
+            <p>
+              <a class="tel" href="tel:03-1234-5678">
+                03-1234-5678
+              </a>
+            </p>
+          </dd>
+        </div>
+        <div class="data-block">
+          <dt>営業時間</dt>
+          <dd>
+            <p>月〜金: 10:00〜19:00</p>
+            <p>土日祝: 10:00〜18:00</p>
+          </dd>
+        </div>
+        <div class="data-block">
+          <dt>定休日</dt>
+          <dd>
+            <p>毎週水曜日</p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</nav>
+
+<style lang="scss">
+.nav {
+  background-color: var.$c-black;
+  color: var.$c-white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var.$z-menu;
+  opacity: 0;
+  pointer-events: none;
+  height: 100dvh;
+  width: 100%;
+  padding-top: 8rem; // header height
+  overflow-y: auto;
+  transition: all 0.3s;
+  border: 0.1rem solid var.$c-white;
+
+  &::after {
+    content: "";
+    width: calc(100% - 1.6rem);
+    height: calc(100% - 1.6rem);
+    border: 0.1rem solid var.$c-white;
+    top: 0.8rem;
+    left: 0.8rem;
+    display: block;
+    position: fixed;
+    pointer-events: none;
+  }
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 3rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  border-top: 0.1rem solid rgba(#e7e7e7, 0.2);
+  margin-top: 2.4rem;
+  padding: 2.4rem 0;
+
+  li {
+    a {
+      font-weight: bold;
+      letter-spacing: 0.02em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var.$c-white;
+      transition: background-color 0.3s;
+
+      &.childLink {
+        padding-left: 3.2rem;
+      }
+    }
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-bottom: 3.4rem;
+  border-bottom: 0.1rem solid rgba(#e7e7e7, 0.2);
+}
+
+.btn {
+}
+
+.btn-link {
+  position: relative;
+  width: 18rem;
+  height: 5.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.6rem;
+  border: 0.1rem solid var.$c-black;
+  background-color: var.$c-white;
+  color: var.$c-white;
+  z-index: 1;
+  color: var.$c-black;
+  transition: all 0.4s;
+
+  background-color: var.$c-black;
+  color: var.$c-white;
+  border-color: var.$c-white;
+
+  @include mixin.sp {
+    width: 20rem;
+    height: 4.8rem;
+  }
+
+  span {
+    position: relative;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+
+    @include mixin.sp {
+      font-size: 1.2rem;
+    }
+  }
+
+  svg {
+    font-size: 2.2rem;
+
+    @include mixin.sp {
+      font-size: 1.8rem;
+    }
+  }
+
+  @include mixin.hover {
+    &:hover {
+      color: var.$c-white;
+      background-color: var.$c-black;
+    }
+  }
+}
+
+.sub-link-list {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+  padding-bottom: 4.8rem;
+
+  @include mixin.sp {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  a {
+    text-decoration: underline;
+    color: var.$c-black;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 6.4rem;
+}
+
+.logo {
+  font-family: var.$font-cav;
+  font-weight: bold;
+  line-height: 1;
+
+  @include mixin.sp {
+    font-size: 3.2rem;
+    text-align: center;
+  }
+}
+
+.address {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.75;
+  margin-top: 1.6rem;
+}
+
+.data {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.data-block {
+  margin-top: 2.4rem;
+  text-align: center;
+  
+  dt {
+    font-family: var.$font-zen;
+  }
+
+  dd {
+    margin-top: 0.4rem;
+    line-height: 1.75;
+  }
+}
+</style>

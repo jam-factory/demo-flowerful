@@ -1,0 +1,216 @@
+---
+import Container from "@/components/container/Container.astro";
+import SectionTitle from "@/components/section-title/SectionTitle.astro";
+import { Image } from "astro:assets";
+import imgMessage from '@/images/home/message.jpg';
+
+---
+
+<section class="section" id="message">
+  <Container>
+    <h2 class="title">
+      <SectionTitle
+        en="Message"
+        jp="メッセージ"
+      />
+    </h2>
+
+    <p class="en-title"><span>Flower</span>s <span>Ful</span>fill <br />Your Heart and Life.</p>
+
+    <div class="row">
+      <div class="img-col">
+        <div class="thumb">
+          <Image src={imgMessage} alt="Message" />
+        </div>
+
+        <div class="box">
+          <div class="box-inner">
+            <p class="head">心と人生を満たす花束を。</p>
+            <div class="intro">
+              <p>
+                私たちFlowerfulは、花の力を信じています。一輪から豪華な花束まで、花には特別な魔法があります。日常に彩りを添え、大切な瞬間を演出し、心に癒しをもたらします。
+              </p>
+              <p>
+                お客様の想いに寄り添い、最適な花をご提案いたします。記念日、誕生日、感謝の気持ち、自分へのご褒美など、どんな場面でも花はあなたの心と人生を満たします。
+              </p>
+              <p>
+                Flowerfulで見つける花との出会いが、あなたの日常に幸せと彩りをもたらしますように。心を込めて、花のある素敵な暮らしをサポートします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </Container>
+</section>
+
+<style lang="scss">
+  .section {
+    padding: 10rem 0 16rem;
+
+    @include mixin.sp {
+      padding: 6rem 0 8rem;
+    }
+  }
+
+  .row {
+    position: relative;
+    margin-top: 2.4rem;
+  }
+
+  .box {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    z-index: 1;
+    justify-content: flex-start;
+    max-width: 64rem;
+
+    &::before {
+      content: "";
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      border: 0.1rem solid var.$c-black;
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      pointer-events: none;
+
+      @include mixin.sp {
+        width: calc(100% - 1.6rem);
+        height: calc(100% - 1.6rem);
+        top: 0.8rem;
+        left: 0.8rem;
+      }
+    }
+  }
+
+  .box-inner {
+    background-color: var.$c-white;
+    padding: 6rem 6rem 6rem;
+
+    @include mixin.sp {
+      padding: 4rem 3.2rem;
+    }
+  }
+  .en-title {
+    position: relative;
+    font-size: 8rem;
+    font-family: var.$font-cav;
+    margin-top: 8rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    @include mixin.sp {
+      font-size: 4.8rem;
+      margin-top: 4rem;
+    }
+
+    @include mixin.sp-s {
+      font-size: 3.6rem;
+    }
+
+    span {
+      letter-spacing: 0.02em;
+      color: transparent;
+      -webkit-background-clip: text;
+      color: var.$c-black;
+      color: rgb(223, 63, 164);
+    }
+  }
+
+  .head {
+    position: relative;
+    font-weight: bold;
+    display: flex;
+    gap: 1.6rem;
+    letter-spacing: 0.1em;
+    align-items: center;
+    justify-content: center;
+    font-family: var.$font-base;
+    font-weight: 600;
+    font-size: 3.2rem;
+
+    @include mixin.sp {
+      font-size: 2.4rem;
+      text-align: center;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      width: 8rem;
+      height: 0.1rem;
+      background-color: var.$c-black;
+
+      display: none;
+    }
+  }
+
+  .intro {
+    font-family: var.$font-zen;
+    margin-top: 2rem;
+    text-align: center;
+
+    @include mixin.sp-s {
+      text-align: left;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2;
+      font-weight: 500;
+
+      @include mixin.sp {
+        font-size: 1.3rem;
+      }
+
+      & + p {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .img-col {
+    width: 100%;
+    height: 80rem;
+    padding: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mixin.sp {
+      height: 64rem;
+      padding: 4rem;
+    }
+
+    @include mixin.sp-s {
+      height: auto;
+      padding: 2.4rem;
+    }
+  }
+
+  .thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

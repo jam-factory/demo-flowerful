@@ -1,0 +1,329 @@
+---
+import Container from "@/components/container/Container.astro";
+import { Image } from "astro:assets";
+import IconArrowRightShort from "@/components/icons/IconArrowRightShort.astro";
+import SectionTitle from "@/components/section-title/SectionTitle.astro";
+
+import imgService01 from '@/images/home/service-01.jpg';
+import imgService02 from '@/images/home/service-02.jpg';
+import imgService03 from '@/images/home/service-03.jpg';
+---
+
+<section class="section" id="service">
+  <Container>
+    <h2 class="title">
+      <SectionTitle
+        en="Service"
+        jp="私たちのサービス"
+      />
+    </h2>
+
+    <ul class="list">
+      <li class="item">
+        <div class="text-content">
+          <h3>
+            <span>In-Store Sales</span>
+            <span>店頭販売</span>
+          </h3>
+          <p>新鮮で美しい花々を取り揃えています。季節の花や特別なイベント用の花束など、さまざまなシーンに合うお花をご用意しております。店頭では専門スタッフが丁寧にご案内し、お客様のご希望に合わせた最適な花をご提案いたします。</p>
+        </div>
+        <div class="img-content">
+          <Image src={imgService01} alt="In-Store Sales" />
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="text-content">
+          <h3>
+            <span>Flower Arrangements</span>
+            <span>フラワーアレンジメント</span>
+          </h3>
+          <p>お客様のご要望に合わせたオーダーメイドの花束やアレンジメントを作成します。特別なギフトや記念日のために心を込めてデザインします。季節の花材を使ったアレンジメントやテーマに合わせたデザインなど、多様なスタイルに対応可能です。</p>
+        </div>
+        <div class="img-content">
+          <Image src={imgService02} alt="Flower Arrangements" />
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="text-content">
+          <h3>
+            <span>Event Decorations</span>
+            <span>イベント装飾</span>
+          </h3>
+          <p>結婚式、パーティー、企業イベントなどの装飾を承ります。イベントのテーマに合わせた華やかなデザインで、特別な日を彩ります。豊富な経験を持つフローリストが、お客様のイメージにぴったりの空間を演出いたします。</p>
+        </div>
+        <div class="img-content">
+          <Image src={imgService03} alt="Event Decorations" />
+        </div>
+      </li>
+    </ul>
+
+    <div class="btn-wrap">
+      <a href="/service" class="btn">
+        <span>View Details</span>
+        <IconArrowRightShort class="btn-arrow" />
+      </a>
+    </div>
+  </Container>
+</section>
+
+<style lang="scss">
+.section {
+  padding: 16rem 0 0;
+  background-color: var.$c-white;
+
+  @include mixin.sp {
+    padding-top: 8rem;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  margin-top: 6.4rem;
+
+  @include mixin.sp {
+    margin-top: 3.2rem;
+  }
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 52rem;
+  height: 100%;
+  align-items: center;
+
+  @include mixin.tab {
+    flex-direction: column-reverse;
+    min-height: auto;
+  }
+
+  &:not(:first-child) {
+    margin-top: 10rem;
+
+    @include mixin.sp {
+      margin-top: 6.4rem;
+    }
+  }
+
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+
+    @include mixin.tab {
+      flex-direction: column-reverse;
+
+      .text-content {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+
+    .img-content {
+      right: auto;
+      left: 0;
+    }
+  }
+}
+
+.text-content {
+  width: 50%;
+  background-color: var.$c-white;
+  position: relative;
+  border: 0.1rem solid var.$c-black;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem;
+
+  @include mixin.tab {
+    width: 90%;
+    margin-right: auto;
+    margin-top: -6.4rem;
+    padding: 4rem;
+  }
+
+  @include mixin.sp-s {
+    padding: 3.2rem;
+  }
+
+  &::before {
+    content: "";
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    border: 0.1rem solid var.$c-black;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    pointer-events: none;
+
+    @include mixin.sp {
+      width: calc(100% - 1.6rem);
+      height: calc(100% - 1.6rem);
+      top: 0.8rem;
+      left: 0.8rem;
+    }
+  }
+
+  h3 {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      &:nth-child(1) {
+        font-family: var.$font-cav;
+        font-weight: bold;
+        font-size: 2rem;
+
+        @include mixin.sp {
+          font-size: 1.6rem;
+        }
+      }
+
+      &:nth-child(2) {
+        font-family: var.$font-zen;
+        font-size: 2.4rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+
+        @include mixin.sp {
+          font-size: 2rem;
+        }
+
+        @include mixin.sp-s {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  p {
+    font-family: var.$font-zen;
+    margin-top: 1.6rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2;
+
+    @include mixin.sp {
+      font-size: 1.3rem;
+      margin-top: 1.2rem;
+    }
+  }
+}
+
+.img-content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 70%;
+
+  @include mixin.tab {
+    position: relative;
+    width: 100%;
+    height: 48rem;
+  }
+
+  @include mixin.sp-s {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 6.4rem;
+
+  @include mixin.sp {
+    margin-top: 3.2rem;
+  }
+}
+
+.btn {
+  position: relative;
+  width: 24rem;
+  height: 6rem;
+
+  @include mixin.sp {
+    width: 20rem;
+    height: 4.8rem;
+  }
+
+  span {
+    position: relative;
+    border: 0.1rem solid var.$c-black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.4rem;
+
+    font-family: var.$font-base;
+    font-weight: 600;
+    font-size: 1.5rem;
+    background-color: var.$c-white;
+    z-index: 1;
+    letter-spacing: 0.04em;
+    transition: all 0.4s;
+
+    @include mixin.sp {
+      padding: 0 1.6rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  @include mixin.hover {
+    &:hover {
+      span {
+        background-color: var.$c-black;
+        color: var.$c-white;
+      }
+
+      &::before {
+        background-color: var.$c-black;
+        transform: translate(0, 0);
+      }
+
+      .btn-arrow {
+        :global(polyline) {
+          stroke: var.$c-white;
+        }
+      }
+    }
+  }
+}
+
+.btn-arrow {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 3rem;
+
+  @include mixin.sp {
+    width: 2.6rem;
+  }
+
+  :global(polyline) {
+    stroke: var.$c-black;
+  }
+}
+</style>

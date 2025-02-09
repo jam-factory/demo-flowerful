@@ -1,0 +1,443 @@
+---
+import { Image } from 'astro:assets';
+import Container from '@/components/container/Container.astro';
+import imgService01 from '@/images/service/service-01.jpg';
+import imgService02 from '@/images/service/service-02.jpg';
+import imgService03 from '@/images/service/service-03.jpg';
+---
+
+<seciton class="section">
+  <Container>
+    <div class="groups">
+      <div class="group">
+        <div class="block">
+          <div class="top-row">
+            <h2 class="title">
+              <span>In-Store Sales</span>
+              <span>店頭販売</span>
+            </h2>
+            <div class="img-col">
+              <Image src={imgService01} alt="" />
+            </div>
+            <div class="text-col">
+              <div class="flow">
+                <h3>サービス概要</h3>
+                <div class="text">
+                  <p>
+                    新鮮で美しい花々を取り揃えています。季節の花や特別なイベント用の花束など、さまざまなシーンに合うお花をご用意しております。店頭では専門スタッフが丁寧にご案内し、お客様のご希望に合わせた最適な花をご提案いたします。
+                  </p>
+                  <p>
+                    季節ごとに変わる花のラインアップや特別なギフトセットも充実しています。ご来店いただくと、花の香りに包まれた店内で、実際に花を手に取ってお選びいただけます。お客様のご希望やイメージに合わせた花のアレンジメントもご提案します。
+                  </p>
+                </div>
+              </div>
+
+              <div class="flow">
+                <h3>サービスの流れ</h3>
+                <ol>
+                  <li>
+                    <h4>
+                      <span>01. </span>ご来店
+                    </h4>
+                    <p>店頭にお越しいただき、豊富な花や植物をご覧ください。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>02. </span>商品選び
+                    </h4>
+                    <p>スタッフがお客様のご希望に合わせて最適な商品をご案内します。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>03. </span>購入手続き
+                    </h4>
+                    <p>お選びいただいた商品をレジにてお会計します。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>04. </span>お持ち帰り
+                    </h4>
+                    <p>購入された花や植物を丁寧に包装し、お持ち帰りいただきます。</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="block">
+          <div class="top-row">
+            <h2 class="title">
+              <span>Flower Arrangements</span>
+              <span>フラワーアレンジメント</span>
+            </h2>
+            <div class="img-col">
+              <Image src={imgService02} alt="" />
+            </div>
+            <div class="text-col">
+              <div class="flow">
+                <h3>サービス概要</h3>
+                <div class="text">
+                  <p>
+                    お客様のご要望に合わせたオーダーメイドの花束やアレンジメントを提供しています。特別なギフトや記念日のために、心を込めてデザインします。季節の花材を使ったアレンジメントや、テーマに合わせたデザインなど、多様なスタイルに対応可能です。
+                  </p>
+                  <p>
+                    お誕生日、結婚記念日、プロポーズなど、大切な瞬間を彩るための花束やアレンジメントをオーダーメイドでお作りします。経験豊かなフローリストが、お客様のご希望を丁寧にヒアリングし、世界に一つだけの特別な花を創り上げます。
+                  </p>
+                </div>
+              </div>
+
+              <div class="flow">
+                <h3>サービスの流れ</h3>
+                <ol>
+                  <li>
+                    <h4>
+                      <span>01. </span>ご相談
+                    </h4>
+                    <p>店頭、電話、またはメールでアレンジメントのご要望をお伺いします。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>02. </span>デザイン提案
+                    </h4>
+                    <p>ご希望に基づき、フローリストがデザイン案を作成し、ご提案します。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>03. </span>ご注文確定
+                    </h4>
+                    <p>デザイン案にご納得いただいた後、正式にご注文を確定します。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>04. </span>作成開始
+                    </h4>
+                    <p>フローリストが心を込めてアレンジメントを作成します。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>05. </span>受け取り・配達
+                    </h4>
+                    <p>完成したアレンジメントを店頭で受け取るか、配達サービスをご利用いただけます。</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="block">
+          <div class="top-row">
+            <h2 class="title">
+              <span>Event Decorations</span>
+              <span>イベント装飾</span>
+            </h2>
+            <div class="img-col">
+              <Image src={imgService03} alt="" />
+            </div>
+            <div class="text-col">
+              <div class="flow">
+                <h3>サービス概要</h3>
+                <div class="text">
+                  <p>
+                    結婚式、パーティー、企業イベントなど、さまざまなイベントの装飾を承ります。イベントのテーマや会場の雰囲気に合わせて、華やかで美しいデザインを提供し、特別な日を彩ります。経験豊富なフローリストが、お客様のイメージに合わせた空間を演出します。
+                  </p>
+                  <p>
+                    小規模なパーティーから大規模な企業イベントまで、幅広い装飾ニーズに対応しています。お客様との打ち合わせを重ね、詳細なプランニングを行い、イベント当日に向けた準備を万全に整えます。特別な日をより一層華やかに演出するためのサポートをいたします。
+                  </p>
+                </div>
+              </div>
+
+              <div class="flow">
+                <h3>サービスの流れ</h3>
+                <ol>
+                  <li>
+                    <h4>
+                      <span>01. </span>初回相談
+                    </h4>
+                    <p>店頭、電話、またはオンラインでイベントの詳細やご要望をお伺いします。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>02. </span>プランニング
+                    </h4>
+                    <p>イベントのテーマや規模に合わせた装飾プランを作成し、ご提案します。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>03. </span>打ち合わせ
+                    </h4>
+                    <p>お客様との打ち合わせを通じて、プランの詳細を確定します。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>04. </span>準備・設置
+                    </h4>
+                    <p>イベント当日に向けて、装飾アイテムの準備と設置を行います。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>05. </span>イベント当日
+                    </h4>
+                    <p>イベント当日、装飾が完璧に整った状態でお迎えします。</p>
+                  </li>
+                  <li>
+                    <h4>
+                      <span>06. </span>後片付け
+                    </h4>
+                    <p>イベント終了後、装飾の撤去と後片付けを行います。</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</seciton>
+
+<style lang="scss">
+.section {
+  padding: 10rem 0 0;
+
+  @include mixin.sp {
+    padding-top: 8rem;
+  }
+}
+
+.groups {
+  display: grid;
+  gap: 12rem;
+
+  @include mixin.sp {
+    gap: 6.4rem;
+  }
+}
+
+.group {
+}
+
+.block {
+  position: relative;
+  padding: 16rem 0;
+  display: flex;
+  gap: 5%;
+  background-color: var.$c-white;
+  padding: 6rem;
+  border: 0.1rem solid var.$c-black;
+
+  @include mixin.sp {
+    padding: 4rem 3.2rem;
+  }
+
+  &::after {
+    content: "";
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    border: 0.1rem solid var.$c-black;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    pointer-events: none;
+
+    @include mixin.sp {
+      width: calc(100% - 1.6rem);
+      height: calc(100% - 1.6rem);
+      top: 0.8rem;
+      left: 0.8rem;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // color: var.$c-white;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  span {
+    &:nth-child(1) {
+      font-family: var.$font-cav;
+      font-size: 2rem;
+      font-weight: bold;
+
+      @include mixin.sp {
+        margin-top: 0.4rem;
+        font-size: 1.6rem;
+      }
+    }
+
+    &:nth-child(2) {
+      font-size: 3.2rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-top: 0.4rem;
+      font-family: var.$font-base;
+      font-weight: 600;
+      font-weight: bold;
+
+      @include mixin.sp {
+        font-size: 2.4rem;
+        margin-top: 0;
+        letter-spacing: 0.05em;
+      }
+
+      @include mixin.sp-s {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.text-col {
+  font-family: var.$font-zen;
+
+  .text {
+    
+    font-size: 1.5rem;
+    line-height: 2;
+    font-weight: 500;
+    margin-top: 2.4rem;
+
+    @include mixin.sp {
+      font-size: 1.3rem;
+      margin-top: 1.6rem;
+    }
+
+    p {
+      &:not(:first-child) {
+        margin-top: 2.4rem;
+
+        @include mixin.sp {
+          margin-top: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+.img-col {
+  position: relative;
+  // width: 45%;
+  height: 48rem;
+  margin-top: 3.2rem;
+
+  @include mixin.tab {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  @include mixin.sp {
+    margin-top: 1.6rem;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  &::after {
+    // content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var.$c-black, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.flow {
+  padding-top: 6.4rem;
+
+  @include mixin.sp {
+    padding-top: 3.2rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    border-bottom: 0.1rem dashed;
+    padding-bottom: 0.8rem;
+
+    @include mixin.sp {
+      font-size: 1.8rem;
+      padding-bottom: 0.6rem;
+    }
+
+    @include mixin.sp-s {
+      font-size: 1.6rem;
+    }
+  }
+
+  ol {
+    li {
+      position: relative;
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin-top: 3.2rem;
+      padding: 2.4rem;
+      background-color: #f5f5f7;
+
+      @include mixin.sp {
+        padding: 1.6rem;
+        font-size: 1.3rem;
+        margin-top: 2.4rem;
+      }
+
+      &::after {
+        content: "";
+        width: 1.2rem;
+        height: 0.8rem;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        background-color: var.$c-black;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2rem;
+        margin: 0 auto;
+
+        @include mixin.sp {
+          bottom: -1.7rem;
+        }
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+
+      h4 {
+        font-weight: 500;
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+
+        @include mixin.sp {
+          font-size: 1.6rem;
+        }
+
+        @include mixin.sp-s {
+          font-size: 1.5rem;
+        }
+
+        span {
+          font-family: var.$font-cav;
+          font-size: 2.2rem;
+          font-weight: bold;
+
+          @include mixin.sp {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

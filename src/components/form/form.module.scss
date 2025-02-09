@@ -1,0 +1,267 @@
+.form {
+  position: relative;
+  background-color: var.$c-white;
+  padding: 10rem 6rem;
+  border: 0.1rem solid var.$c-black;
+  margin: 6.4rem auto 0;
+  font-family: var.$font-zen;
+
+  @include mixin.sp {
+    padding: 6.4rem 2.4rem;
+    margin-top: 4rem;
+  }
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    border: 0.1rem solid var.$c-black;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+    @include mixin.sp {
+      width: calc(100% - 1.6rem);
+      height: calc(100% - 1.6rem);
+      top: 0.8rem;
+      left: 0.8rem;
+    }
+  }
+}
+
+.inner {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.info {
+  li {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+
+    @include mixin.sp {
+      font-size: 1.4rem;
+    }
+
+    &::before {
+      content: "・";
+    }
+  }
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.label {
+  flex-shrink: 0;
+  display: flex;
+  font-weight: bold;
+  font-size: 1.5rem;
+  align-items: center;
+}
+
+.control {
+  flex-grow: 1;
+  margin-top: 0.8rem;
+
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    outline: none;
+    font-weight: 500;
+    background-color: #f5f5f7;
+
+    @include mixin.sp {
+      font-size: 1.6rem;
+    }
+  }
+
+  textarea {
+    min-height: 24rem;
+    resize: vertical;
+
+    @include mixin.sp {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.errorText {
+  display: flex;
+  align-items: center;
+  color: #df2424;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 0.4rem;
+
+  svg {
+    margin-right: 0.2rem;
+  }
+}
+
+// check
+
+.checkRow {
+}
+
+.checkHead {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  margin-top: 1.6rem;
+
+  input {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+  }
+}
+
+.checkLabel {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.policy {
+  height: 24rem;
+  width: 100%;
+  overflow: auto;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 1.6rem;
+  border: 0.1rem solid var.$c-black;
+  margin-top: 0.8rem;
+
+  & > *:not(:first-child) {
+    margin-top: 1.6rem;
+  }
+
+  p {
+    &.head {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-top: 3.2rem;
+    }
+  }
+
+  ul {
+    li {
+      display: flex;
+
+      &::before {
+        content: "・";
+      }
+    }
+  }
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+
+  @include mixin.sp {
+    margin-top: 1.6rem;
+  }
+}
+
+.btn {
+  position: relative;
+  width: 24rem;
+  height: 6rem;
+  cursor: pointer;
+
+  @include mixin.sp {
+    width: 20rem;
+    height: 4.8rem;
+  }
+
+  span {
+    position: relative;
+    border: 0.1rem solid var.$c-black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.4rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    background-color: var.$c-black;
+    color: var.$c-white;
+    z-index: 1;
+    letter-spacing: 0.04em;
+    transition: all 0.4s;
+
+    @include mixin.sp {
+      padding: 0 1.6rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  @include mixin.hover {
+    &:hover {
+      span {
+        background-color: var.$c-white;
+        color: var.$c-black;
+      }
+
+      &::before {
+        background-color: var.$c-black;
+        transform: translate(0, 0);
+      }
+
+      svg {
+        polyline {
+          stroke: var.$c-black;
+        }
+      }
+    }
+  }
+}
+
+.btnArrow {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 3rem;
+
+  polyline {
+    stroke: var.$c-white;
+  }
+}
+
+.btnInfoText {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 1.2rem;
+
+  @include mixin.sp {
+    font-size: 1.3rem;
+  }
+}

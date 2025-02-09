@@ -1,0 +1,289 @@
+---
+const {service, access, company} = Astro.props;
+import { Image } from "astro:assets";
+import Container from "@/components/container/Container.astro";
+
+import imgService from '@/images/common/service-banner.jpg';
+import imgAccess from '@/images/common/access-banner.jpg';
+import imgCompany from '@/images/common/company-banner.jpg';
+import imgContact from '@/images/common/contact-banner.jpg';
+
+import iconArrowBlack from '@/images/common/icon-arrow-right-black.svg';
+import iconArrowWhite from '@/images/common/icon-arrow-right-white.svg';
+---
+
+<div class="banner">
+  <Container>
+    <div class="row">
+
+      {
+        service && (
+          <a href="/service" class="img">
+            <Image src={imgService} alt="" />
+
+            <div class="text">
+              <span>Service</span>
+              <span>私たちのサービス</span>
+            </div>
+
+            <div class="arrow">
+              <Image src={iconArrowBlack} alt="" />
+            </div>
+          </a>
+        )
+      }
+
+      {
+        company && (
+          <a href="/company" class="img">
+            <Image src={imgCompany} alt="" />
+
+            <div class="text">
+              <span>Company</span>
+              <span>会社概要</span>
+            </div>
+
+            <div class="arrow">
+              <Image src={iconArrowBlack} alt="" />
+            </div>
+          </a>
+        )
+      }
+
+      {
+        access && (
+          <a href="/access" class="img">
+            <Image src={imgAccess} alt="" />
+
+            <div class="text">
+              <span>Access</span>
+              <span>アクセス</span>
+            </div>
+
+            <div class="arrow">
+              <Image src={iconArrowBlack} alt="" />
+            </div>
+          </a>
+        )
+      }
+    </div>
+
+    <a href="/contact" class="img">
+      <Image src={imgContact} alt="" />
+
+      <div class="text">
+        <span>Contact</span>
+        <span>お問い合わせ</span>
+      </div>
+
+      <div class="arrow">
+        <Image src={iconArrowWhite} alt="" />
+      </div>
+    </a>
+  </Container>
+</div>
+
+<style lang="scss">
+.banner {
+  padding: 12rem 0;
+
+  @include mixin.sp {
+    padding: 8rem 0;
+  }
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  overflow: hidden;
+  border: 0.1rem solid var.$c-black;
+
+  @include mixin.tab {
+    height: 40rem;
+  }
+
+  @include mixin.sp {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(var.$c-black, 0.3);
+    z-index: 1;
+    transition: all 0.5s;
+  }
+
+  &::after {
+    content: "";
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    top: 1rem;
+    left: 1rem;
+    border: 0.1rem solid var.$c-white;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    transition: all 0.3s;
+
+    @include mixin.sp {
+      width: calc(100% - 1.6rem);
+      height: calc(100% - 1.6rem);
+      top: 0.8rem;
+      left: 0.8rem;
+    }
+  }
+
+  @include mixin.hover {
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+
+      &::before {
+        background-color: rgba(var.$c-black, 1);
+      }
+
+      .arrow {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+      }
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  right: 5rem;
+  color: var.$c-white;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-50%) translateX(-1.6rem);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  @include mixin.sp {
+    display: none;
+  }
+}
+
+.text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var.$c-white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    &:nth-child(1) {
+      font-family: var.$font-base;
+      font-weight: bold;
+      font-size: 3.2rem;
+
+      @include mixin.tab {
+        font-size: 2.6rem;
+      }
+
+      @include mixin.sp {
+        font-size: 2rem;
+      }
+    }
+
+    &:nth-child(2) {
+      font-family: var.$font-zen;
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+
+      @include mixin.tab {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  height: 50rem;
+
+  @include mixin.tab {
+    height: 40rem;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include mixin.sp {
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  @include mixin.sp-s {
+    flex-direction: column;
+  }
+
+  .arrow {
+    top: auto;
+    right: 5rem;
+    bottom: 4rem;
+
+    @include mixin.sp {
+      display: none;
+    }
+  }
+
+  .img {
+    height: 100%;
+
+    @include mixin.hover {
+      &:hover {
+        span {
+          color: var.$c-black;
+        }
+
+        img {
+          transform: scale(1.1);
+        }
+
+        &::before {
+          background-color: rgba(var.$c-white, 1);
+        }
+
+        &::after {
+          border-color: var.$c-black;
+        }
+
+        .arrow {
+          opacity: 1;
+          transform: translateY(-50%) translateX(0);
+        }
+      }
+    }
+  }
+}
+</style>

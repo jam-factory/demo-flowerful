@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import SubMv from "@/components/pages/sub/SubMv.astro";
+import imgCompany from '@/images/company/mv.jpg';
+
+import Outline from '@/components/pages/company/Outline.astro';
+import History from '@/components/pages/company/History.astro';
+import NavBanner from '@/components/nav-banner/NavBanner.astro';
+---
+
+<Layout title="会社概要">
+  <SubMv img={imgCompany} en='Company' jp="会社概要" />
+  <Outline />
+  <History />
+  <NavBanner service access />
+</Layout>
+

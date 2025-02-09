@@ -1,0 +1,117 @@
+---
+import '@splidejs/splide/css';
+import { Image } from 'astro:assets';
+import imgSlider01 from '@/images/home/mv-01.jpg';
+import imgSlider02 from '@/images/home/mv-02.jpg';
+import imgSlider03 from '@/images/home/mv-03.jpg';
+---
+
+<div class="wrap">
+  <div class="splide mv-slider" aria-label="メインビジュアル">
+    <div class="splide__track slider-track">
+      <ul class="splide__list slider-list">
+        <li class="splide__slide slider-slide">
+          <Image src={imgSlider01} alt="" />
+        </li>
+        <li class="splide__slide slider-slide">
+          <Image src={imgSlider02} alt="" />
+        </li>
+        <li class="splide__slide slider-slide">
+          <Image src={imgSlider03} alt="" />
+        </li>
+      </ul>
+    </div>
+    <ul class="splide__pagination slider-pagination"></ul>
+  </div>
+</div>
+
+<style lang="scss">
+.wrap {
+  height: 100%;
+  width: 100%;
+}
+
+.slider-track {
+  height: 100%;
+  width: 100%;
+}
+
+.splide {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-slide {
+  width: 100%;
+  height: 100%;
+
+  img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+  }
+}
+
+.slider-pagination {
+  bottom: 2.4rem;
+
+  @include mixin.sp {
+    bottom: 1.6rem;
+  }
+
+  :global(.splide__pagination__page) {
+    opacity: 0.7;
+    background-color: var.$c-white;
+    height: 0.8rem;
+    width: 0.8rem;
+    margin: 0 0.4rem;
+    pointer-events: none;
+
+    @include mixin.sp {
+      width: 0.6rem;
+      height: 0.6rem;
+      margin: 0 0.3rem;
+    }
+  }
+
+  :global(.splide__pagination__page.is-active) {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.wrap {
+  :global(.splide__slide.is-active img) {
+    animation: scale 7s linear forwards;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+</style>
+
+<script>
+  import Splide from '@splidejs/splide';
+  
+  new Splide( '.mv-slider', {
+    pauseOnHover: false,
+    resetProgress: false,
+    pagination: true,
+    autoplay: true,
+    arrows: false,
+    type: 'fade',
+    rewind: true,
+    interval: 7000,
+    speed: 3000,
+    updateOnMove: true,
+  } ).mount();
+</script>

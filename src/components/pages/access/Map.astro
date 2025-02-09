@@ -1,0 +1,258 @@
+---
+import Container from "@/components/container/Container.astro";
+import SectionTitle from "@/components/section-title/SectionTitle.astro";
+
+import { FaTrain } from "react-icons/fa";
+import { FaCar } from "react-icons/fa6";
+import { FaMapMarkerAlt } from "react-icons/fa";
+---
+
+<section class="section">
+  <Container>
+    <h2 class="title">
+      <SectionTitle
+        en="Access Map"
+        jp="アクセスマップ"
+      />
+    </h2>
+
+    <p class="intro">
+      電車でのアクセスが便利で、どなたでも気軽にお越しいただけます。
+      <br />
+      以下の地図をご参考に、ご来店ください。
+    </p>
+
+    <div class="map">
+      <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51862.59266156455!2d139.6513310207582!3d35.66685505409989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cb2eb3108d1%3A0xf11cd9b2395b6677!2z5p2x5Lqs6YO95riL6LC35Yy6!5e0!3m2!1sja!2sjp!4v1723127901061!5m2!1sja!2sjp"
+      style={{ border: 0 }}
+      allow-full-screen=""
+      loading="lazy"
+      referrer-policy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="info">
+      <div class="info-block">
+        <h3>
+          <FaTrain />
+          電車でお越しの方
+        </h3>
+        <p>
+          渋谷駅東口から徒歩5分の距離にございます。東口を出て、青山通りを直進し、宮益坂交差点を左折してください。少し進むと右手に店舗が見えてきます。
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h3>
+          <FaCar />
+          お車でお越しの方
+        </h3>
+        <p>
+          専用駐車場はございませんので、近隣のコインパーキングをご利用ください。宮益坂交差点付近に複数の駐車場がございますので、そちらをご利用のうえ、徒歩でお越しください。
+        </p>
+      </div>
+    </div>
+
+    <div class="btn-wrap">
+      <a
+        href="https://maps.app.goo.gl/oJRTk6Vwaax5ZPpY8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn"
+      >
+        <span>Google Maps</span>
+        <FaMapMarkerAlt />
+      </a>
+    </div>
+  </Container>
+</section>
+
+<style lang="scss">
+.section {
+  padding: 10rem 0 16rem;
+
+  @include mixin.sp {
+    padding: 8rem 0;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  font-family: var.$font-zen;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2;
+  margin-top: 6.4rem;
+  text-align: center;
+
+  @include mixin.sp {
+    font-size: 1.3rem;
+    margin-top: 3.2rem;
+  }
+}
+
+.map {
+  position: relative;
+  height: 50rem;
+  width: 100%;
+  margin-top: 4rem;
+
+  @include mixin.sp {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.info {
+  position: relative;
+  display: flex;
+  gap: 4rem;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 0.1rem solid #e3e2e2;
+  font-family: var.$font-zen;
+
+  @include mixin.sp {
+    gap: 0;
+    flex-wrap: wrap;
+    padding-bottom: 0;
+    margin-top: 0;
+  }
+
+  &::after {
+    content: "";
+    width: 0.1rem;
+    height: calc(100% - 4rem);
+    background-color: #e3e2e2;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    @include mixin.sp {
+      display: none;
+    }
+  }
+}
+
+.info-block {
+  position: relative;
+  width: calc(50% - 2rem);
+  padding: 4rem;
+
+  @include mixin.tab {
+    padding: 2.4rem;
+  }
+
+  @include mixin.sp {
+    width: 100%;
+    padding: 2.4rem 0;
+  }
+
+  &:last-child {
+    border-top: 1px solid #e3e2e2;
+  }
+
+  h3 {
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 0.6rem;
+    }
+
+    @include mixin.sp {
+      font-size: 1.5rem;
+      text-align: left;
+      justify-content: flex-start;
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2;
+    margin-top: 2.4rem;
+
+    @include mixin.sp {
+      font-size: 1.3rem;
+      margin-top: 1.6rem;
+    }
+  }
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 6.4rem;
+
+  @include mixin.sp {
+    margin-top: 3.2rem;
+  }
+}
+
+.btn {
+  position: relative;
+  width: 24rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+  border: 0.1rem solid var.$c-black;
+  z-index: 1;
+  transition: all 0.4s;
+
+  @include mixin.sp {
+    width: 20rem;
+    height: 4.8rem;
+    padding: 0 1.6rem;
+  }
+
+  span {
+    position: relative;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+
+    @include mixin.sp {
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  svg {
+    font-size: 2.2rem;
+
+    @include mixin.sp {
+      font-size: 2rem;
+    }
+  }
+
+  @include mixin.hover {
+    &:hover {
+      color: var.$c-white;
+      background-color: var.$c-black;
+    }
+  }
+}
+
+</style>

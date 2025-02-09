@@ -1,0 +1,160 @@
+---
+import SectionTitle from "@/components/section-title/SectionTitle.astro";
+import Container from "@/components/container/Container.astro";
+import { Image } from "astro:assets";
+
+import imgStore from '@/images/access/store.jpg';
+---
+
+<section class="section">
+  <Container>
+    <h2 class="title">
+      <SectionTitle en="Store Info" jp="店舗情報" />
+    </h2>
+
+    <div class="row">
+      <div class="info">
+        <dl>
+          <div>
+            <dt>店舗名</dt>
+            <dd>株式会社Flowerful 渋谷店</dd>
+          </div>
+          <div>
+            <dt>住所</dt>
+            <dd>東京都渋谷区1-2-3</dd>
+          </div>
+          <div>
+            <dt>電話番号</dt>
+            <dd>03-1234-5678</dd>
+          </div>
+          <div>
+            <dt>営業時間</dt>
+            <dd>
+              月〜金: 10:00〜19:00
+              <br />
+              土日祝: 10:00〜18:00
+            </dd>
+          </div>
+          <div>
+            <dt>定休日</dt>
+            <dd>毎週水曜日</dd>
+          </div>
+          <div>
+            <dt>Instagram</dt>
+            <dd>
+              <a href="https://www.instagram.com/jam_factory.demo02/" target="_blank" rel="noopener noreferrer">
+                @jam_factory.demo02
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="thumb">
+        <Image src={imgStore} alt="" />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style lang="scss">
+.section {
+  background-color: var.$c-white;
+  padding: 16rem 0;
+
+  @include mixin.sp {
+    padding: 8rem 0;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+  margin-top: 6.4rem;
+  gap: 4rem;
+
+  @include mixin.tab {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  @include mixin.sp {
+    margin-top: 3.2rem;
+  }
+}
+
+.info {
+  width: calc(50% - 2rem);
+
+  @include mixin.tab {
+    width: 100%;
+  }
+
+  dl {
+    border-top: 0.1rem solid #e3e2e2;
+
+    @include mixin.tab {
+      border-top: none;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0;
+      border-bottom: 0.1rem solid #e3e2e2;
+      line-height: 2;
+      font-size: 1.5rem;
+      font-family: var.$font-zen;
+
+      @include mixin.sp {
+        padding: 1.6rem 0;
+        font-size: 1.3rem;
+      }
+
+      dt {
+        font-weight: 600;
+      }
+
+      dd {
+        font-weight: 500;
+
+        a {
+          text-decoration: underline;
+          transition: opacity 0.3s;
+
+          @include mixin.hover {
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.thumb {
+  position: relative;
+  width: calc(50% - 2rem);
+
+  @include mixin.tab {
+    height: 32rem;
+    width: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+</style>

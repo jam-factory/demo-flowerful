@@ -1,0 +1,103 @@
+---
+import Container from "@/components/container/Container.astro";
+import SectionTitle from "@/components/section-title/SectionTitle.astro";
+---
+
+<section class="section">
+  <Container>
+    <h2 class="title">
+      <SectionTitle
+        en="Outline"
+        jp="会社概要"
+      />
+    </h2>
+
+    <dl class="list">
+      <div class="item">
+        <dt>会社名</dt>
+        <dd>株式会社Flowerful</dd>
+      </div>
+      <div class="item">
+        <dt>設立年月日</dt>
+        <dd>2024年1月1日</dd>
+      </div>
+      <div class="item">
+        <dt>本社所在地</dt>
+        <dd>〒150-0000 東京都渋谷区1-2-3</dd>
+      </div>
+      <div class="item">
+        <dt>代表者名</dt>
+        <dd>山田太郎</dd>
+      </div>
+      <div class="item">
+        <dt>事業内容</dt>
+        <dd>花の販売、フラワーアレンジメント、イベント装飾</dd>
+      </div>
+      <div class="item">
+        <dt>資本金</dt>
+        <dd>1000万円</dd>
+      </div>
+      <div class="item">
+        <dt>従業員数</dt>
+        <dd>30名</dd>
+      </div>
+    </dl>
+  </Container>
+</section>
+
+<style lang="scss">
+.section {
+  padding: 10rem 0 16rem;
+
+  @include mixin.sp {
+    padding: 8rem 0;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  margin-top: 6.4rem;
+  border-top: 0.1rem solid #e3e2e2;
+  font-family: var.$font-zen;
+
+  @include mixin.sp {
+    margin-top: 3.2rem;
+  }
+}
+
+.item {
+  display: flex;
+  padding: 2.4rem 0;
+  border-bottom: 0.1rem solid #e3e2e2;
+  font-size: 1.5rem;
+
+  @include mixin.sp {
+    padding: 1.6rem 0;
+    font-size: 1.3rem;
+  }
+
+  dt {
+    width: 32rem;
+    flex-shrink: 0;
+    font-weight: bold;
+
+    @include mixin.sp {
+      width: 16rem;
+    }
+
+    @include mixin.sp-s {
+      width: 12rem;
+    }
+  }
+
+  dd {
+    flex-grow: 1;
+    font-weight: 500;
+  }
+}
+</style>

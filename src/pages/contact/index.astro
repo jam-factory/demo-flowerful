@@ -1,0 +1,15 @@
+---
+import SubMv from "@/components/pages/sub/SubMv.astro";
+import Layout from "@/layouts/Layout.astro";
+import Contact from "@/components/pages/contact/Contact.astro";
+import imgContact from '@/images/contact/mv.jpg';
+---
+
+<Layout title="お問い合わせ">
+  <SubMv
+    img={imgContact}
+    en="Contact"
+    jp="お問い合わせ"
+  />
+  <Contact />
+</Layout>
